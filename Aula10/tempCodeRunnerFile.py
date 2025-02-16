@@ -1,1 +1,0 @@
-mssql+pyodbc://JoaoPZampoli:04eidD(YQx7/2hMD@projetosjpzampoli-poo.database.windows.net:1433/livrariapoo?driver=ODBC+Driver+17+for+SQL+Server&Encrypt=yes&TrustServerCertificate=no&Connection+Timeout=30'

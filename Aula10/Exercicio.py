@@ -1,7 +1,10 @@
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey, create_engine, UniqueConstraint
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship
+import dotenv
+import os
 
-
+dotenv.load_dotenv()
+Credentials = os.getenv("CREDENTIALS")
 Base = declarative_base()
 
 
@@ -34,7 +37,8 @@ class BookItem(Base):
   
 # Database setup
 #Host do BD no Azure, em caso de qualquer problema, por favor entre em contato com joao.zampoli@unifesp.br
-engine = create_engine('mssql+pyodbc://JoaoPZampoli:04eidD(YQx7/2hMD@projetosjpzampoli-poo.database.windows.net:1433/livrariapoo?driver=ODBC+Driver+17+for+SQL+Server&Encrypt=yes&TrustServerCertificate=no&Connection+Timeout=30')
+print(Credentials)
+engine = create_engine(Credentials)
 try:
     connection = engine.connect()
     print("Connection successful!")
